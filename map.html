@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <title>Maps</title>
+<body>
+
+<h1>Panera Bread</h1>
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+    var locations = [
+      ['Panera Bread Shaw Two', 36.807773, -119.69273599999997, 3],
+      ['Panera Bread Blackstone', 36.8487861, -119.7896594, 2],
+      ['Panera Bread Shaw One', 36.8086172, -119.85774229999998, 1]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('googleMap'), {
+      zoom: 10,
+      center: new google.maps.LatLng(36.8086172, -119.85774229999998),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_k4L9AHlSVgd2RpzZqvUdgXuFSeLyMPM&callback=myMap"></script>
+
+</body>
+</html>
