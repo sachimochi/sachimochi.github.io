@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload = document.getElementById('hi').innerHTML= 'already loaded'">
+    <button type="button" onmouseover="document.getElementById('hi').innerHTML = 'mouse over'" 
+    onmouseout="document.getElementById('hi').innerHTML = 'mouse out'"
+    onclick= "document.getElementById('hi').innerHTML = 'mouse click'" >Click me  </button>
+ 
+    <p id="hi"></p>
+    <input type="text" name="input" value="six" onchange="document.getElementById('hi').innerHTML= 'on change'">  </input>
+</body>
+</html>
