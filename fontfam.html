@@ -7,9 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-   <button type="button" onclick = "document.getElementById('ok').style.fontFamily = 'Arial'">
+   <button type="button" onclick = "clickHandler()" >
 Click here
    </button>
+
    <p id="ok"> hi </p>
+<script>
+    function clickHandler() {
+        document.getElementById('ok').style.fontFamily = 'Arial'
+        document.getElementById('ok').style.fontSize = '69px'
+        document.getElementById('ok').innerHTML = 'Hello.....'
+        document.getElementById('ok').style.color = 'cyan'
+        document.getElementById('ok').style.backgroundColor = 'orchid'
+        document.getElementById('ok').style.borderStyle = 'dotted'
+        document.getElementById('ok').style.borderColor = 'lightgreen'
+        document.getElementById('ok').style.borderRadius = '25px'
+}
+
+</script>
 </body>
 </html>
